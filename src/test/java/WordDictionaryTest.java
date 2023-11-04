@@ -11,7 +11,22 @@ public class WordDictionaryTest {
         Assert.assertFalse(wordDictionary.search("pad"));
         Assert.assertTrue(wordDictionary.search("bad"));
         Assert.assertTrue(wordDictionary.search(".ad"));
-        Assert.assertTrue(wordDictionary.search("p.."));
+        Assert.assertTrue(wordDictionary.search("b.."));
+
+    }
+    @Test
+    public void testWordDictionaryClass2(){
+        WordDictionary wordDictionary = new WordDictionary();
+        wordDictionary.addWord("a");
+        wordDictionary.addWord("a");
+        wordDictionary.addWord("add");
+        Assert.assertTrue(wordDictionary.search("."));
+        Assert.assertTrue(wordDictionary.search("a"));
+        Assert.assertFalse(wordDictionary.search("aa"));
+        Assert.assertTrue(wordDictionary.search("a.d"));
+        Assert.assertFalse(wordDictionary.search("a."));
+        Assert.assertFalse(wordDictionary.search(".a"));
+
 
     }
 }
